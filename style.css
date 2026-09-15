@@ -47,6 +47,33 @@
   visibility: visible;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tooltip-text {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  font-size: 0.78rem;
+  background-color: #323232;
+  color: white;
+  opacity: 0.9;
+  padding: 5px 8px;
+  white-space: nowrap;
+  border-radius: 5px;
+  visibility: hidden;
+  z-index: 2;
+  margin-top: 4px;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+}
+
 /* NAVBAR STYLES */
 nav {
     display: flex;
@@ -58,12 +85,19 @@ nav {
   margin: 0 10px;
   color: #5f6368;
 }
-logo {
+.logo {
   display: flex;
   align-items: center;
+  gap: 8px;
   font-size: 1.5rem;
   font-weight: bold;
   color: #5f6368;
+}
+
+.logo-text {
+  font-size: 1.375rem;
+  color: #5f6368;
+  margin-left: 4px;
 }
 
 .search-area {
@@ -76,6 +110,11 @@ logo {
   width: 100%;
   max-width: 720px;
 }
+.search-icon {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
 .search-area input[type="text"] {
   border: none;
   background-color: transparent;
@@ -83,6 +122,9 @@ logo {
   width: 100%;
   padding: 0 8px;
   font-size: 1rem;
+}
+#clear-search {
+  font-size: 1.1rem;
 }
 
 input:focus {
@@ -237,6 +279,13 @@ input:focus {
 .small-icon {
   color: black;
   font-size: 1.1rem;
+}
+
+.empty-state {
+  text-align: center;
+  color: #80868b;
+  font-size: 1.1rem;
+  margin-top: 80px;
 }
 
 /* ALL NOTES  */

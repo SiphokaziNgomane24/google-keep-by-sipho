@@ -3,75 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google keep by sipho </title>
+    <title>Google Keep by Sipho</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
 </head>
 <body>
     <nav>
         <div class="logo">
-                <div class="menu">
-                    <i class="material-icons">menu</i>
-                </div>
-                 <img src="https://www.gstatic.com/images/branding/productlogos/keep_2026/v2/web-48dp/logo_keep_2026_color_2x_web_48dp.png" alt="google keep logo"
-                 alt=""
-                aria-hidden="true"
-                role="presentation"
-                style="width: 40px; height: 40px"
-                />
-                <span class="logo-text">Google Keep</span>
+            <div class="menu">
+                <span class="material-symbols-outlined hover">menu</span>
+            </div>
+            <img src="https://www.gstatic.com/images/branding/productlogos/keep_2026/v2/web-48dp/logo_keep_2026_color_2x_web_48dp.png"
+                alt="Google Keep logo"
+                style="width: 40px; height: 40px" />
+            <span class="logo-text">Google Keep</span>
         </div>
         <div class="search-area">
             <div class="search-icon">
                 <span class="material-symbols-outlined hover">search</span>
-                <i class="material-icons">search</i>
-            <input type="text">
+                <input type="text" id="search-input" placeholder="Search">
+                <span class="material-symbols-outlined hover" id="clear-search" style="display:none">close</span>
             </div>
         </div>
         <div class="nav-icons">
             <span class="material-symbols-outlined hover">refresh</span>
-            <i class="material-icons">refresh</i>
         </div>
         <div class="nav-icons">
             <span class="material-symbols-outlined hover">view_agenda</span>
-            <i class="material-icons">view_agenda</i>
         </div>
         <div class="nav-icons">
             <span class="material-symbols-outlined hover">settings</span>
-            <i class="material-icons">settings</i>
         </div>
     <div class="profile-area">
         <div class="nav-icons">
-            <span class="material-symbols-outlined   hover">Apps</span>
-            <i class="material-icons">apps</i>
+            <span class="material-symbols-outlined hover">apps</span>
         </div>
         <div class="nav-icons">
-            <span class="material-symbols-outlined hover">account</span>
-            <i class="material-icons">account_circle</i>
+            <span class="material-symbols-outlined hover">account_circle</span>
         </div>
     </div>
     </nav>
 <main>
       <div class="sidebar">
-        <div class="sidebar-item active-item">
+        <div class="sidebar-item active-item" data-view="notes">
           <span class="material-symbols-outlined hover active">
             lightbulb
           </span>
           <span class="sidebar-text">Notes</span>
         </div>
-        <div class="sidebar-item">
+        <div class="sidebar-item" data-view="reminders">
           <span class="material-symbols-outlined hover"> notifications </span>
           <span class="sidebar-text">Reminders</span>
         </div>
-        <div class="sidebar-item">
+        <div class="sidebar-item" data-view="labels">
           <span class="material-symbols-outlined hover"> edit </span>
           <span class="sidebar-text">Edit Labels</span>
         </div>
-        <div class="sidebar-item">
+        <div class="sidebar-item" data-view="archive">
           <span class="material-symbols-outlined hover"> archive </span>
           <span class="sidebar-text">Archive</span>
         </div>
-        <div class="sidebar-item">
+        <div class="sidebar-item" data-view="trash">
           <span class="material-symbols-outlined hover"> delete </span>
           <span class="sidebar-text">Trash</span>
         </div>
@@ -161,11 +153,12 @@
                 <span class="tools-text">Redo</span>
               </div>
             </div>
-            <button class="close-btn">close</button>
+            <button class="close-btn" type="submit">close</button>
           </div>
         </form>
       </div>
 
+      <div class="empty-state" style="display:none"></div>
       <div class="notes"></div>
 
       <div class="modal">
@@ -235,7 +228,7 @@
                     <span class="tools-text">Redo</span>
                   </div>
                 </div>
-                <button class="close-btn" id="modal-btn">close</button>
+                <button class="close-btn" id="modal-btn" type="button">close</button>
               </div>
             </form>
           </div>
